@@ -20,6 +20,8 @@ func main() {
 	if err != nil {
 		err.Error()
 	}
+	defer res.Body.Close()
+	
 	var user []User
 
 	decoder := json.NewDecoder(res.Body)
